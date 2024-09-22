@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
   <head>
     <meta charset="UTF-8">
@@ -21,9 +21,9 @@
               Hello there,           
             </p>
             <p style="padding-top: 0; margin: 0;">
-              I hope you recieved the sunflowers. 
+              I hope you received the sunflowers. 
               Sorry wasn't able to give them to you in person.
-              Well now you'd know why.
+              Well, now you'd know why.
             </p>
           </div>
 
