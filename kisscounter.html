@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kiss Counter 💋</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: #ffe4ec;
+            color: #d6336c;
+            padding-top: 50px;
+        }
+        h1 {
+            font-size: 3em;
+        }
+        .counter {
+            font-size: 4em;
+            margin: 20px 0;
+        }
+        button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background: #ff99b6;
+            color: white;
+            transition: 0.2s;
+        }
+        button:hover {
+            background: #ff6f91;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>💋 Kiss Counter 💋</h1>
+    <div class="counter" id="count">0</div>
+    <button onclick="increase()">+ Kiss</button>
+    <button onclick="decrease()">- Kiss</button>
+    <button onclick="reset()">Reset</button>
+
+    <script>
+        let count = 0;
+
+        function updateDisplay() {
+            document.getElementById("count").innerText = count;
+        }
+
+        function increase() {
+            count++;
+            updateDisplay();
+            saveCount();
+        }
+
+        function decrease() {
+            if (count > 0) count--;
+            updateDisplay();
+            saveCount();
+        }
+
+        function reset() {
+            count = 0;
+            updateDisplay();
+            saveCount();
+        }
+
+        function saveCount() {
+            localStorage.setItem("kissCount", count);
+        }
+
+        function loadCount() {
+            let saved = localStorage.getItem("kissCount");
+            if (saved !== null) {
+                count = parseInt(saved);
+                updateDisplay();
+            }
+        }
+
+        loadCount();
+    </script>
+
+</body>
+</html>
